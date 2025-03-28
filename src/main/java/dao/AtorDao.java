@@ -59,7 +59,11 @@ public class AtorDao implements IAtorDao {
 	}
 
 	public void atualizar(Ator ator) {
-		
+		EntityManager em = mf.createEntityManager();
+		em.getTransaction().begin();
+		em.merge(ator);
+		em.getTransaction().commit();
+		em.close();
 	}
 	
 	

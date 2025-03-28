@@ -18,6 +18,7 @@ public class Main {
 		String nomeAtor;
 		Filme f1 = new Filme();
 		Ator a1 = new Ator();
+		Long id;
 		FilmeController fControl = new FilmeController();
 		AtorController aControl = new AtorController();
 		int escolha;
@@ -38,7 +39,7 @@ public class Main {
 			System.out.println("10. Participa√ß√£o Ator no Filme");
 			System.out.println("11. Sair");
 
-			System.out.print("Escolha uma opÁ„o: ");
+			System.out.print("Escolha uma op√ß√£o: ");
 			escolha = scanner.nextInt();
 
 			switch (escolha) {
@@ -76,7 +77,7 @@ public class Main {
 				
 			case 4:
 				System.out.println("Escolha um filme para atualizar ");
-				long id = scanner.nextLong();
+				id = scanner.nextLong();
 				f1.setId(id);
 				f1.setTitulo("Terminator");
 				f1.setNomeDiretor("James Cammeron");
@@ -84,7 +85,7 @@ public class Main {
 				break;
 			case 5:
 				System.out.println("Escolha um filme para apagar ");
-				 id = scanner.nextLong();
+				id = scanner.nextLong();
 				fControl.apagar(id);
 				break;	
 			case 6:
@@ -103,19 +104,23 @@ public class Main {
 						System.out.println("Id= " + ator.getId() + " Nome: " + ator.getNome() + ", Pais: " + ator.getPais());
 					}
 				}
-				else System.out.println("N„o encontrou o Ator");
+				else System.out.println("N√£o encontrou o Ator");
 				break;
 			case 8:
 				System.out.println("Escolha um ator para apagar ");
-				id = scanner.nextInt();
+				id = scanner.nextLong();
 				aControl.apagar(id);
 				break;
 			case 9:
 				System.out.println("Atualizar um ator ");
-				
+				id = scanner.nextLong();
+				f1.setId(id);
+				f1.setTitulo("Terminator");
+				f1.setNomeDiretor("James Cammeron");
+				aControl.atualizar(a1);
 				break;
 			case 10:
-				System.out.println("Verificar participaÁ„o de ator no filme ");
+				System.out.println("Verificar participa√ß√£o de ator no filme ");
 				
 				break;
 			case 11:
